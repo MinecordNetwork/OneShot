@@ -9,7 +9,7 @@ import net.minecord.oneshot.game.OneShotGame
 import net.minecord.oneshot.game.player.OneShotPlayer
 import org.bukkit.entity.Player
 
-class OneShotSystem: BaseSystem() {
+class OneShotSystem : BaseSystem() {
     override fun createGame(plugin: Gamesys, arena: Arena): Game {
         return OneShotGame(plugin, arena)
     }
@@ -22,7 +22,7 @@ class OneShotSystem: BaseSystem() {
         return false
     }
 
-    override fun disableHungerBar(): Boolean {
+    override fun isHungerBarDisabled(): Boolean {
         return true
     }
 
