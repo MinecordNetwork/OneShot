@@ -9,6 +9,8 @@ import net.minecord.oneshot.system.OneShotSystem
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.annotation.command.Command
 import org.bukkit.plugin.java.annotation.command.Commands
+import org.bukkit.plugin.java.annotation.dependency.Dependency
+import org.bukkit.plugin.java.annotation.dependency.DependsOn
 import org.bukkit.plugin.java.annotation.plugin.Description
 import org.bukkit.plugin.java.annotation.plugin.Plugin
 import org.bukkit.plugin.java.annotation.plugin.Website
@@ -19,6 +21,7 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author
 @Commands(Command(name = "gametest", desc = "Test command"))
 @Website("https://minecord.net")
 @Author("Minecord Network")
+@DependsOn(Dependency("Multiverse-Core"))
 class OneShot : Gamesys() {
     override fun onEnable() {
         run(OneShotSystem())
