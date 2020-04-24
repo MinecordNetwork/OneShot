@@ -8,7 +8,7 @@ import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 
 class OneShotPlayer(plugin: Gamesys, player: Player): GamePlayer(plugin, player) {
-    override fun getGameMode(): GameMode {
+    override fun getDefaultGameMode(): GameMode {
         return GameMode.ADVENTURE
     }
 

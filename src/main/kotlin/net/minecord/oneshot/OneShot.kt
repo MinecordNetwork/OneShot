@@ -35,6 +35,7 @@ class OneShot : Gamesys() {
     }
 
     override fun onDisable() {
+        stop()
         logger.logInfo("Plugin was successfully disabled!")
     }
 }
