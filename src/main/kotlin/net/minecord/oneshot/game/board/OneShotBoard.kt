@@ -10,7 +10,7 @@ class OneShotBoard(plugin: Gamesys, game: Game) : GameBoard(plugin, game) {
     }
 
     override fun getLines(): HashMap<String, Int> {
-        val list =  super.getLines()
+        val list = super.getLines()
 
         game.players.forEach {
             list["&f${it.kills} &b${it.player.name}"] = it.kills
