@@ -28,6 +28,7 @@ class OneShotGame(plugin: Gamesys, arena: Arena) : Game(plugin, arena) {
 
         if (status == GameStatus.RUNNING) {
             killer?.let {
+                board.update()
                 it.player.inventory.addItem(ItemStack(Material.ARROW))
                 if (it.kills >= 20) {
                     onEndCountdownStart(killer)
