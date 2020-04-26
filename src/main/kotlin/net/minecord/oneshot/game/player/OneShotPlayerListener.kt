@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageByEntityEvent
+import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.event.entity.ProjectileLaunchEvent
 
 
@@ -34,6 +35,20 @@ class OneShotPlayerListener(private val plugin: OneShot): Listener {
                 }
                 victim.game!!.onPlayerDeath(victim, e.cause, plugin.gamePlayerManager.get(shooter))
             }
+        }
+    }
+
+    @EventHandler(priority = EventPriority.LOWEST)
+    fun onSelfDamage(e: EntityDamageEvent) {
+        if (e.entity !is Player) return
+
+        val victim = plugin.gamePlayerManager.get(e.entity as Player)
+        if (victim.game == null) {
+            return
+        }
+
+        if (e.cause == EntityDamageEvent.DamageCause.FALL) {
+            e.isCancelled = true
         }
     }
 

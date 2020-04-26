@@ -11,7 +11,7 @@ import net.minecord.oneshot.game.board.OneShotBoard
 import net.minecord.oneshot.game.player.OneShotPlayer
 import org.bukkit.entity.Player
 
-class OneShotSystem : BaseSystem() {
+class OneShotSystem(plugin: Gamesys) : BaseSystem(plugin) {
     override fun createGame(plugin: Gamesys, arena: Arena): Game {
         return OneShotGame(plugin, arena)
     }

@@ -6,16 +6,18 @@ import net.minecord.gamesys.game.board.GameBoard
 
 class OneShotBoard(plugin: Gamesys, game: Game) : GameBoard(plugin, game) {
     override fun getTitle(): String {
-        return "  &e&lMINECORD   "
+        return "  &e&lOneShot   "
     }
 
     override fun getLines(): HashMap<String, Int> {
         val list = super.getLines()
+        val playerList = game.players
 
-        game.players.sortBy { it.kills }
+        playerList.sortBy { it.kills }
 
-        game.players.forEach {
-            list["&f${it.kills} &b${it.player.name}"] = it.kills
+        var limit = 15
+        playerList.filter { limit-- > 0 }.forEach {
+            list["&f${it.kills} &a${it.player.name}"] = it.kills
         }
 
         return list
