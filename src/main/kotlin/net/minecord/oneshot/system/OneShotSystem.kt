@@ -24,6 +24,10 @@ class OneShotSystem(plugin: Gamesys) : BaseSystem(plugin) {
         return OneShotBoard(plugin, game)
     }
 
+    override fun getChatPrefix(): String {
+        return "&b&lOneShot &f&l●&7"
+    }
+
     override fun dropItemsAfterDeath(): Boolean {
         return false
     }
