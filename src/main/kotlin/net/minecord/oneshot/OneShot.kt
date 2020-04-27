@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.annotation.command.Command
 import org.bukkit.plugin.java.annotation.command.Commands
 import org.bukkit.plugin.java.annotation.dependency.Dependency
 import org.bukkit.plugin.java.annotation.dependency.DependsOn
+import org.bukkit.plugin.java.annotation.plugin.ApiVersion
 import org.bukkit.plugin.java.annotation.plugin.Description
 import org.bukkit.plugin.java.annotation.plugin.Plugin
 import org.bukkit.plugin.java.annotation.plugin.Website
@@ -22,14 +23,17 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author
 )
 @Website("https://minecord.net")
 @Author("Minecord Network")
+@ApiVersion(ApiVersion.Target.DEFAULT)
 @DependsOn(
     Dependency("Multiverse-Core"),
     Dependency("HolographicDisplays"),
-    Dependency("XoreBoardUtil")
+    Dependency("XoreBoardUtil"),
+    Dependency("FastAsyncWorldEdit"),
+    Dependency("WorldEdit")
 )
 class OneShot : Gamesys() {
     override fun onEnable() {
-        run(OneShotSystem(this))
+        enable(OneShotSystem(this))
 
         Bukkit.getPluginManager().registerEvents(OneShotPlayerListener(this), this)
 
@@ -38,7 +42,7 @@ class OneShot : Gamesys() {
     }
 
     override fun onDisable() {
-        stop()
+        super.onDisable()
         logger.logInfo("Plugin was successfully disabled!")
     }
 }
