@@ -1,11 +1,11 @@
-package net.minecord.oneshot.game.board
+package net.minecord.oneshot.game.sidebar
 
 import net.minecord.gamesys.Gamesys
 import net.minecord.gamesys.game.Game
-import net.minecord.gamesys.game.board.GameBoard
 import net.minecord.gamesys.game.player.GamePlayer
+import net.minecord.gamesys.game.sidebar.GameSidebar
 
-class OneShotBoard(plugin: Gamesys, game: Game) : GameBoard(plugin, game) {
+class OneShotSidebar(plugin: Gamesys, game: Game) : GameSidebar(plugin, game) {
     override fun getTitle(player: GamePlayer): String {
         return "  &e&l${game.arena.name}   "
     }

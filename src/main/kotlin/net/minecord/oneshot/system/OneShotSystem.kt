@@ -3,11 +3,11 @@ package net.minecord.oneshot.system
 import net.minecord.gamesys.Gamesys
 import net.minecord.gamesys.arena.Arena
 import net.minecord.gamesys.game.Game
-import net.minecord.gamesys.game.board.GameBoard
 import net.minecord.gamesys.game.player.GamePlayer
+import net.minecord.gamesys.game.sidebar.GameSidebar
 import net.minecord.gamesys.system.BaseSystem
 import net.minecord.oneshot.game.OneShotGame
-import net.minecord.oneshot.game.board.OneShotBoard
+import net.minecord.oneshot.game.sidebar.OneShotSidebar
 import net.minecord.oneshot.game.player.OneShotPlayer
 import org.bukkit.entity.Player
 
@@ -20,8 +20,8 @@ class OneShotSystem(plugin: Gamesys) : BaseSystem(plugin) {
         return OneShotPlayer(plugin, player)
     }
 
-    override fun createGameBoard(plugin: Gamesys, game: Game): GameBoard {
-        return OneShotBoard(plugin, game)
+    override fun createGameSidebar(plugin: Gamesys, game: Game): GameSidebar {
+        return OneShotSidebar(plugin, game)
     }
 
     override fun getChatPrefix(): String {
