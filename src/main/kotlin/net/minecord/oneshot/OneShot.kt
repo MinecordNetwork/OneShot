@@ -8,6 +8,8 @@ import org.bukkit.plugin.java.annotation.command.Command
 import org.bukkit.plugin.java.annotation.command.Commands
 import org.bukkit.plugin.java.annotation.dependency.Dependency
 import org.bukkit.plugin.java.annotation.dependency.DependsOn
+import org.bukkit.plugin.java.annotation.dependency.SoftDependency
+import org.bukkit.plugin.java.annotation.dependency.SoftDependsOn
 import org.bukkit.plugin.java.annotation.plugin.ApiVersion
 import org.bukkit.plugin.java.annotation.plugin.Description
 import org.bukkit.plugin.java.annotation.plugin.Plugin
@@ -30,6 +32,9 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author
     Dependency("XoreBoardUtil"),
     Dependency("FastAsyncWorldEdit"),
     Dependency("WorldEdit")
+)
+@SoftDependsOn(
+    SoftDependency("ProtocolSupport")
 )
 class OneShot : Gamesys() {
     override fun onEnable() {
