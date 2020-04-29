@@ -14,7 +14,7 @@ class OneShotSidebar(plugin: Gamesys, game: Game) : GameSidebar(plugin, game) {
         val list = super.getLines(player)
         val playerList = game.players
 
-        playerList.sortBy { it.kills }
+        playerList.sortByDescending { it.kills }
 
         list["&7----------------"] = 23
         list["&bYour kills: &f${player.kills}"] = 22
