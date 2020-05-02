@@ -10,7 +10,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.event.entity.ProjectileLaunchEvent
 
-
 class OneShotPlayerListener(private val plugin: OneShot): Listener {
     @EventHandler(priority = EventPriority.LOW)
     fun onKill(e: EntityDamageByEntityEvent) {
