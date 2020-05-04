@@ -45,10 +45,6 @@ class OneShotPlayerListener(private val plugin: OneShot): Listener {
         if (victim.game == null) {
             return
         }
-
-        if (e.cause == EntityDamageEvent.DamageCause.FALL) {
-            e.isCancelled = true
-        }
     }
 
     @EventHandler
