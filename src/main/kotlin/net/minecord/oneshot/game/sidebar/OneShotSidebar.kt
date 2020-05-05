@@ -7,7 +7,7 @@ import net.minecord.gamesys.game.sidebar.GameSidebar
 
 class OneShotSidebar(plugin: Gamesys, game: Game) : GameSidebar(plugin, game) {
     override fun getTitle(player: GamePlayer): String {
-        return "  &e&l${game.arena.name}   "
+        return "&7&lArena &f➲ &e&l${game.arena.name}"
     }
 
     override fun getLines(player: GamePlayer): HashMap<String, Int> {
