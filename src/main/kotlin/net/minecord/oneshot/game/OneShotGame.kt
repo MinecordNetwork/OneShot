@@ -83,7 +83,7 @@ class OneShotGame(plugin: Gamesys, arena: Arena) : Game(plugin, arena) {
                         players.forEach {
                             it.player.playSound(it.player.location, Sound.UI_BUTTON_CLICK, 3f, 1f)
                             if (winner != null) {
-                                it.player.sendTitle("&c&l${countdown}".colored(), "&f&lPlayer &a&l${winner.player.name} &f&lwins the Game".colored(), 0, 60, 20)
+                                it.player.sendTitle("&c&l${countdown}".colored(), "&f&lPlayer &a&l${winner.player.name} &f&lwon the Game".colored(), 0, 60, 20)
                             } else {
                                 it.player.sendTitle("&c&l${countdown}".colored(), "&f&lGame has ended".colored(), 0, 60, 20)
                             }
