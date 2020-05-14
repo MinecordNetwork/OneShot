@@ -5,7 +5,7 @@ import net.minecord.gamesys.arena.Arena
 import net.minecord.gamesys.game.Game
 import net.minecord.gamesys.game.GameStatus
 import net.minecord.gamesys.game.player.GamePlayer
-import net.minecord.gamesys.utils.colored
+import net.minecord.gamesys.utils.chat.colored
 import net.minecord.gamesys.utils.instantFirework
 import org.bukkit.Color
 import org.bukkit.FireworkEffect
