@@ -1,0 +1,22 @@
+main: net.minecord.oneshot.OneShot
+name: OneShot
+version: '1.0'
+description: Minecraft minigame
+author: Minecord Network
+website: https://minecord.net
+depend:
+  - Multiverse-Core
+  - HolographicDisplays
+  - XoreBoardUtil
+  - FastAsyncWorldEdit
+  - WorldEdit
+softdepend:
+  - ProtocolSupport
+commands:
+  join:
+    description: Join
+  leave:
+    description: Leave
+  start:
+    description: Start
+permissions: {}
