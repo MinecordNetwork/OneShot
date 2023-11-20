@@ -5,8 +5,8 @@ import net.minecord.gamesys.arena.Arena
 import net.minecord.gamesys.game.Game
 import net.minecord.gamesys.game.GameStatus
 import net.minecord.gamesys.game.player.GamePlayer
+import net.minecord.gamesys.utils.InstantFirework
 import net.minecord.gamesys.utils.chat.colored
-import net.minecord.gamesys.utils.instantFirework
 import org.bukkit.Color
 import org.bukkit.FireworkEffect
 import org.bukkit.Material
@@ -27,7 +27,7 @@ class OneShotGame(plugin: Gamesys, arena: Arena) : Game(plugin, arena) {
     override fun onPlayerDeath(player: GamePlayer, cause: EntityDamageEvent.DamageCause?, killer: GamePlayer?) {
         super.onPlayerDeath(player, cause, killer)
 
-        instantFirework(FireworkEffect.builder().withColor(Color.RED).with(FireworkEffect.Type.BURST).build(), player.player.location)
+        InstantFirework().explode(FireworkEffect.builder().withColor(Color.RED).with(FireworkEffect.Type.BURST).build(), player.player.location)
 
         if (status == GameStatus.RUNNING) {
             killer?.let {

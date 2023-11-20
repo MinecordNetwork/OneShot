@@ -7,27 +7,27 @@ import net.minecord.gamesys.game.sidebar.GameSidebar
 
 class OneShotSidebar(plugin: Gamesys, game: Game) : GameSidebar(plugin, game) {
     override fun getTitle(player: GamePlayer): String {
-        return "&7&lArena &f➲ &e&l${game.arena.name}"
+        return "<gray><bold>Arena</bold></gray> <white>➲ <yellow><bold>${game.arena.name}"
     }
 
-    override fun getLines(player: GamePlayer): HashMap<String, Int> {
+    override fun getLines(player: GamePlayer): ArrayList<String> {
         val list = super.getLines(player)
         val playerList = game.players
 
         playerList.sortByDescending { it.kills }
 
-        list["&7----------------"] = 23
-        list["&bYour kills: &f${player.kills}"] = 22
-        list["&7&7----------------"] = 21
+        list.add("<gray><st>----------------")
+        list.add("<aqua>Your kills: <white>${player.kills}")
+        list.add("<gray><st>-----------------")
 
         var limit = 9
-        playerList.filter { limit-- > 0 }.forEach {
-            list["&f${it.kills} &a${it.player.name}"] = it.kills
+        playerList.filter { limit-- > 0 }.sortedByDescending { it.kills }.forEach {
+            list.add("<white>${it.kills} <green>${it.player.name}")
         }
 
-        list["&7&7&7----------------"] = -1
-        list["&bIP: &fmc.minecord.net"] = -2
-        list["&7&7&7&7----------------"] = -3
+        list.add("<gray><st>-----------------")
+        list.add("<aqua>IP: <white>mc.minecord.net")
+        list.add("<gray><st>-----------------")
 
         return list
     }
