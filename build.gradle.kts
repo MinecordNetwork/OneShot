@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin", "kotlin-stdlib", "1.8.21")
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(fileTree(mapOf("dir" to "../Gamesys/build/libs", "include" to listOf("*.jar"))))
     compileOnly("io.papermc.paper", "paper-api", "1.20.2-R0.1-SNAPSHOT")
 }
 
